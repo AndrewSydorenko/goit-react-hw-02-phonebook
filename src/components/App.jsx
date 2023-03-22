@@ -1,9 +1,21 @@
 import { Component } from "react";
 import { nanoid } from 'nanoid';
+import styled from "styled-components";
 import { ContactsForm } from "./phonebook/ContactsForm";
 import { ContactsList } from "./contacts/ContacstList";
 import { ContactsFilter } from "./filter/ContactsFilter";
 
+const StyledSection = styled.section `
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`
 
 class App extends Component {
   state = {
@@ -47,7 +59,7 @@ class App extends Component {
   
     render() {
         return (
-          <section>
+          <StyledSection>
             <div>
             <h1>Phonebook</h1>
               <ContactsForm handleSubmit={this.handleSubmit } />
@@ -60,7 +72,7 @@ class App extends Component {
               />
               <ContactsList filteredContacts={this.filteredContacts()} handleDelete={this.handleDelete} />
             </div>
-          </section>
+          </StyledSection>
         )
     }
 };

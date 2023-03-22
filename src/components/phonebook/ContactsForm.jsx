@@ -1,4 +1,30 @@
 import { Component } from 'react';
+import styled from "styled-components";
+
+const StyledForm = styled.form`
+display: flex;
+flex-direction: column;
+margin-bottom: 20px;
+gap: 10px;
+& button {
+  background-color: #3973a796;
+  border: 1px solid grey;
+  color: antiquewhite;
+  border-radius: 10px;
+  &:hover, :focus {
+color: #3973a796;
+background-color: antiquewhite;
+  }
+}
+& input {
+    background-color: antiquewhite;
+    border: 1px solid grey;
+    border-radius: 10px;
+    &:hover, :focus {
+border: 1px solid #3973a796;
+    }
+  }
+`
 
 
 export class ContactsForm extends Component {
@@ -25,7 +51,7 @@ handleChange = evt => {
     render() {
         const { name, number } = this.state
         return (
-            <form onSubmit={this.onSubmit}>
+            <StyledForm onSubmit={this.onSubmit}>
                 <label htmlFor="">Name</label>
                  <input
                     type="text"
@@ -49,7 +75,7 @@ handleChange = evt => {
                     required
                 />
                 <button type="submit">Add contact</button>
-              </form>
+              </StyledForm>
         )
     }
 };
