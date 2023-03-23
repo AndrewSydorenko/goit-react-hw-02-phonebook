@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const StyledForm = styled.form`
 display: flex;
@@ -25,8 +26,6 @@ border: 1px solid #3973a796;
     }
   }
 `
-
-
 export class ContactsForm extends Component {
 state = {
     name: '',
@@ -78,4 +77,9 @@ handleChange = evt => {
               </StyledForm>
         )
     }
+}
+
+
+ContactsForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
 };

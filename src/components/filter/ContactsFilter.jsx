@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const StyledInput = styled.input`
      background-color: antiquewhite;
@@ -17,4 +18,9 @@ export const ContactsFilter = ({onHandleChange, filter}) => {
         <StyledInput type="text" value={filter} onChange={onHandleChange} />
       </div>
     );
+}
+
+ContactsFilter.propTypes = {
+  onHandleChange: PropTypes.func,
+  filter: PropTypes.string
 }

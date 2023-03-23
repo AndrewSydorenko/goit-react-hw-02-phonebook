@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const StyledList = styled.ul`
     display: flex;
@@ -29,4 +30,9 @@ return (
                     <li key={contact.id}>{contact.name}: {contact.number} <button type="button" onClick={() => handleDelete(contact.id)}>Delete</button></li>)}
               </StyledList>
     )
+}
+
+ContactsList.propTypes = {
+    filteredContacts: PropTypes.array,
+    handleDelete: PropTypes.func
 }
